@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>RetailDesk | Executive Operating System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.process = window.process || { env: { API_KEY: "" } };
+      
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              bone: {
+                50: '#FFFFFF',   /* Pure White */
+                100: '#FDFCF8',  /* Executive Bone */
+                200: '#F5F2EA',  /* Warm Parchment */
+                300: '#E5E1D1',  /* Muted Taupe Border */
+              },
+              gold: {
+                400: '#D4AF37',  /* Metallic Gold */
+                500: '#B8860B',  /* Dark Goldenrod */
+                600: '#8B5E3C',  /* Antique Umber */
+                700: '#785421',  /* Deep Bronze */
+              }
+            },
+            boxShadow: {
+              'premium': '0 20px 40px -15px rgba(139, 94, 60, 0.08)',
+              'elite': '0 0 60px -12px rgba(0, 0, 0, 0.04)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+      
+      html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Desktop app feel, scroll inside containers */
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #FDFCF8;
+        color: #2C241E;
+        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .dark body {
+        background-color: #020617;
+        color: #f8fafc;
+      }
+      
+      /* Smooth custom scrollbar for elite feel */
+      .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #E5E1D1 transparent;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .light .custom-scrollbar::-webkit-scrollbar-thumb { 
+        background: #E5E1D1; 
+        border-radius: 10px;
+      }
+      .dark .custom-scrollbar::-webkit-scrollbar-thumb { 
+        background: #1e293b; 
+        border-radius: 10px;
+      }
+
+      * {
+        transition-property: background-color, border-color, color, box-shadow;
+        transition-duration: 400ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .glass {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+  <body class="antialiased selection:bg-gold-400/20">
+    <div id="root" class="h-full w-full"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
